@@ -1,0 +1,264 @@
+.catalog {
+    display: none;
+    position: relative;
+    background-color: var(--black2);
+    margin: 10px 15px;
+    z-index: 1000;
+    flex-shrink: 0;
+}
+
+.catalog.active {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    margin: 0;
+    padding-top: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 2001;
+}
+
+.repair-panel {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #8e8e93;
+    margin-bottom: 12px;
+}
+
+.breadcrumb-item {
+    cursor: pointer;
+    color: #8e8e93;
+}
+
+.breadcrumb-item:hover {
+    color: #ffffff;
+}
+
+.breadcrumb-active {
+    color: #8e8e93;
+}
+
+.panel-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.panel-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.block-header {
+    background-color: #1a1a1c;
+    padding: 10px 16px;
+    border-radius: 4px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.block-header.text-between {
+    justify-content: space-between;
+}
+
+.block-header.text-center {
+    justify-content: center;
+}
+
+.block-header h2 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.2px;
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+}
+
+.spacer {
+    width: 22px;
+}
+
+.device-card {
+    background-color: #1a1a1c;
+    border-radius: 4px;
+    padding: 24px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    min-height: 460px;
+}
+
+.image-wrapper {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-wrapper img {
+    max-height: 320px;
+    width: auto;
+    object-fit: contain;
+}
+
+.device-info {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.device-info h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    font-size: 11px;
+    color: #8e8e93;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.btn-link:hover {
+    color: #ffffff;
+}
+
+.promo-banner {
+    background-color: #3b198c;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.badge-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: conic-gradient(#eab308 0% 75%, #22c55e 75% 100%);
+    flex-shrink: 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.service-card {
+    background-color: #1a1a1c;
+    border-radius: 4px;
+    padding: 16px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    min-height: 160px;
+}
+
+.service-icon {
+    margin-bottom: 6px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-details {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.service-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #6187b5;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.service-price {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.btn-order {
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
+
+.btn-order:hover {
+    opacity: 0.9;
+}
+
+.category-footer {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #007aff;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.category-footer:hover {
+    color: #3395ff;
+}
+
+@media screen and (max-width: 1024px) {
+    
+    body:has(.catalog.active-mobile) {
+        overflow: hidden;
+    }
+
+    .catalog {
+        position: fixed;
+        top: 130px;
+        margin: 0;
+        z-index: 9999;
+    }
+}

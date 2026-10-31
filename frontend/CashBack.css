@@ -1,0 +1,1267 @@
+.catalog {
+    display: none;
+    position: relative;
+    background-color: var(--black2);
+    margin: 10px 15px;
+    z-index: 1000;
+    flex-shrink: 0;
+}
+
+.catalog.active {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    margin: 0;
+    padding-top: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 2001;
+}
+
+.cashback-page {
+    width: 100%;
+    overflow: hidden;
+    background: #080808;
+    color: #f5f5f5;
+}
+
+.cashback-page section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 110px 6%;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.section-heading.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.section-heading > span,
+.hero-label,
+.promo-content > span,
+.cashback-final > span {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #777;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: clamp(42px, 6vw, 82px);
+    line-height: .95;
+    letter-spacing: -4px;
+    font-weight: 700;
+}
+
+.section-heading h2 span {
+    background: linear-gradient(
+        100deg,
+        #666,
+        #fff,
+        #888,
+        #fff
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s linear infinite;
+}
+
+.section-heading p {
+    max-width: 550px;
+    margin-top: 28px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #777;
+}
+
+.cashback-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 0 28px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s ease;
+    overflow: hidden;
+}
+
+.cashback-btn.primary {
+    color: #080808;
+    background: #f5f5f5;
+}
+
+.cashback-btn.primary::before {
+    content: "";
+    position: absolute;
+    width: 160%;
+    height: 300%;
+    top: -100%;
+    left: -30%;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255,255,255,.8),
+        transparent 70%
+    );
+    transform: translateX(-100%) rotate(15deg);
+    transition: .8s ease;
+}
+
+.cashback-btn.primary:hover::before {
+    transform: translateX(100%) rotate(15deg);
+}
+
+.cashback-btn:hover {
+    transform: translateY(-3px);
+}
+
+.cashback-btn.secondary {
+    color: #f5f5f5;
+    background: #181818;
+    border: 1px solid #292929;
+}
+
+.cashback-btn.secondary:hover {
+    background: #222;
+}
+
+.cashback-hero {
+    min-height: 720px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-content h1 {
+    max-width: 800px;
+    margin: 0;
+    font-size: clamp(60px, 8vw, 115px);
+    line-height: .88;
+    letter-spacing: -7px;
+}
+
+.hero-content h1 span {
+    display: block;
+    background: linear-gradient(
+        100deg,
+        #666,
+        #fff,
+        #999,
+        #fff
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s linear infinite;
+}
+
+.hero-content > p {
+    max-width: 600px;
+    margin: 35px 0;
+    color: #777;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-card {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    border: 1px solid #252525;
+    border-radius: 45px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(255,255,255,.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 90%,
+            rgba(130,130,255,.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #161616,
+            #0e0e0e,
+            #191919,
+            #0a0a0a
+        );
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.5);
+}
+
+.hero-card-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -70px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    filter: blur(60px);
+}
+
+.hero-card > span,
+.hero-card > p,
+.hero-card > small {
+    position: relative;
+}
+
+.hero-card > span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #777;
+}
+
+.hero-card strong {
+    position: relative;
+    margin: 20px 0 5px;
+    font-size: clamp(100px, 15vw, 190px);
+    line-height: .8;
+    letter-spacing: -12px;
+    background: linear-gradient(
+        135deg,
+        #777,
+        #fff,
+        #888,
+        #fff
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s linear infinite;
+}
+
+.hero-card strong span {
+    font-size: .4em;
+    vertical-align: top;
+    letter-spacing: -2px;
+}
+
+.hero-card p {
+    font-size: 18px;
+    color: #999;
+}
+
+.hero-card-line {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    margin: 35px 0 20px;
+    background: #2a2a2a;
+}
+
+.hero-card small {
+    color: #666;
+}
+
+.cashback-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 0 !important;
+}
+
+.stat-card {
+    padding: 45px;
+    border: 1px solid #202020;
+    border-radius: 30px;
+    background: #111;
+    transition: .3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: #333;
+    background: #151515;
+}
+
+.stat-card strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 55px;
+    line-height: 1;
+    letter-spacing: -3px;
+    background: linear-gradient(
+        120deg,
+        #777,
+        #fff
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-card span {
+    color: #666;
+    font-size: 14px;
+}
+
+.cashback-calculator {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.calculator-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 45px;
+    border: 1px solid #242424;
+    border-radius: 35px;
+    background:
+        linear-gradient(
+            135deg,
+            #141414,
+            #0e0e0e
+        );
+    box-shadow: 0 30px 80px rgba(0,0,0,.3);
+}
+
+.calculator-input label {
+    display: block;
+    margin-bottom: 15px;
+    color: #777;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.price-input {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #444;
+}
+
+.price-input input {
+    width: 100%;
+    padding: 12px 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.price-input input::placeholder {
+    color: #555;
+}
+
+.price-input span {
+    color: #777;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.calculator-result {
+    padding-left: 30px;
+    border-left: 1px solid #292929;
+}
+
+.calculator-result > span {
+    display: block;
+    margin-bottom: 12px;
+    color: #777;
+    font-size: 13px;
+}
+
+.calculator-result strong {
+    display: block;
+    font-size: 55px;
+    line-height: 1;
+    letter-spacing: -3px;
+    background: linear-gradient(
+        100deg,
+        #777,
+        #fff,
+        #999
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calculator-result small {
+    display: block;
+    margin-top: 12px;
+    color: #666;
+}
+
+.how-it-works {
+    padding-top: 60px !important;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.step-card {
+    position: relative;
+    min-height: 350px;
+    padding: 35px;
+    border: 1px solid #202020;
+    border-radius: 30px;
+    background: #111;
+    transition: .3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+    border-color: #333;
+    background: #151515;
+}
+
+.step-number {
+    color: #555;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.step-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    color: #111;
+    font-size: 22px;
+}
+
+.step-card h3 {
+    margin: 25px 0 10px;
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.step-card p {
+    max-width: 350px;
+    color: #777;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.cashback-promo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 600px;
+    margin-top: 40px !important;
+    border: 1px solid #252525;
+    border-radius: 45px;
+    background: #101010;
+    color: #fff;
+    overflow: hidden;
+}
+
+.cashback-promo::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.13),
+            rgba(120,120,255,.04),
+            transparent 65%
+        );
+    filter: blur(20px);
+}
+
+.promo-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.promo-content h2 {
+    margin: 0;
+    font-size: clamp(50px, 7vw, 95px);
+    line-height: .9;
+    letter-spacing: -5px;
+}
+
+.promo-content h2 em {
+    font-style: normal;
+    color: #777;
+}
+
+.promo-content p {
+    max-width: 450px;
+    margin: 30px 0;
+    color: #777;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.promo-content .cashback-btn {
+    background: #f5f5f5;
+    color: #111;
+}
+
+.promo-percent {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    margin-right: 5%;
+    transform: rotate(-8deg);
+}
+
+.promo-percent span {
+    margin-top: 30px;
+    color: #777;
+    font-size: 35px;
+}
+
+.promo-percent strong {
+    font-size: clamp(150px, 20vw, 270px);
+    line-height: .8;
+    letter-spacing: -20px;
+    background: linear-gradient(
+        135deg,
+        #555,
+        #fff,
+        #777
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.promo-percent small {
+    margin-top: 30px;
+    color: #777;
+    font-size: 50px;
+}
+
+.social-cashback {
+    padding-bottom: 60px !important;
+}
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 35px;
+    border: 1px solid #202020;
+    border-radius: 25px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    border-color: #333;
+    background: #151515;
+}
+
+.social-card span,
+.social-card small {
+    display: block;
+}
+
+.social-card span {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.social-card small {
+    margin-top: 5px;
+    color: #666;
+}
+
+.social-card strong {
+    color: #aaa;
+    font-size: 25px;
+}
+
+.cashback-faq {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 100px;
+}
+
+.faq-list {
+    border-top: 1px solid #292929;
+}
+
+.faq-item {
+    border-bottom: 1px solid #292929;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0;
+    border: 0;
+    background: transparent;
+    color: #f5f5f5;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.faq-plus {
+    color: #777;
+    font-size: 25px;
+    font-weight: 300;
+    transition: transform .3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+}
+
+.faq-answer p {
+    max-width: 700px;
+    margin: 0;
+    padding: 0 0 25px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.faq-item.active .faq-plus {
+    transform: rotate(45deg);
+}
+
+.cashback-final {
+    text-align: center;
+    padding-bottom: 140px !important;
+}
+
+.cashback-final h2 {
+    margin: 0 auto 40px;
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: .88;
+    letter-spacing: -6px;
+}
+
+.cashback-final h2 span {
+    background: linear-gradient(
+        100deg,
+        #666,
+        #fff,
+        #888,
+        #fff
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 250% center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .cashback-page section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .cashback-hero {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 45px;
+        min-height: 650px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(58px, 8vw, 95px);
+        letter-spacing: -5px;
+    }
+
+    .hero-card {
+        min-height: 420px;
+        padding: 45px;
+    }
+
+    .hero-card strong {
+        font-size: clamp(90px, 13vw, 160px);
+    }
+
+    .cashback-calculator {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 45px;
+    }
+
+    .cashback-faq {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 50px;
+    }
+
+    .cashback-promo {
+        min-height: 520px;
+    }
+
+    .promo-percent strong {
+        font-size: clamp(130px, 18vw, 220px);
+    }
+
+    .promo-percent {
+        margin-right: 3%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .cashback-page section {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+
+    .cashback-hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        min-height: auto;
+        padding-top: 70px !important;
+    }
+
+    .hero-content {
+        max-width: 750px;
+    }
+
+    .hero-content h1 {
+        max-width: 700px;
+        font-size: clamp(58px, 11vw, 90px);
+        letter-spacing: -5px;
+    }
+
+    .hero-content > p {
+        max-width: 620px;
+    }
+
+    .hero-card {
+        width: 100%;
+        min-height: 330px;
+        padding: 45px;
+        border-radius: 35px;
+    }
+
+    .hero-card strong {
+        font-size: clamp(90px, 18vw, 160px);
+    }
+
+    .cashback-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 30px;
+        border-radius: 25px;
+    }
+
+    .stat-card strong {
+        font-size: clamp(40px, 7vw, 55px);
+    }
+
+    .cashback-calculator {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .calculator-card {
+        width: 100%;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .step-card {
+        min-height: auto;
+        padding: 30px;
+    }
+
+    .step-icon {
+        margin-top: 45px;
+    }
+
+    .cashback-promo {
+        min-height: 500px;
+        padding: 60px 5% !important;
+    }
+
+    .promo-content {
+        max-width: 60%;
+    }
+
+    .promo-percent {
+        position: absolute;
+        right: 0;
+        margin-right: 2%;
+        opacity: .85;
+    }
+
+    .promo-percent strong {
+        font-size: clamp(120px, 20vw, 200px);
+    }
+
+    .social-buttons {
+        max-width: 100%;
+    }
+
+    .cashback-faq {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cashback-faq .section-heading {
+        max-width: 700px;
+    }
+
+    .cashback-final h2 {
+        font-size: clamp(55px, 11vw, 90px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .cashback-page {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .cashback-page section {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 70px 20px;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading > span,
+    .hero-label,
+    .promo-content > span,
+    .cashback-final > span {
+        margin-bottom: 14px;
+        font-size: 9px;
+        letter-spacing: 1.7px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(40px, 12vw, 58px);
+        letter-spacing: -3px;
+        line-height: .94;
+    }
+
+    .section-heading p {
+        margin-top: 20px;
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .cashback-hero {
+        gap: 30px;
+        padding-top: 55px !important;
+        padding-bottom: 55px !important;
+    }
+
+    .hero-content h1 {
+        max-width: 100%;
+        font-size: clamp(52px, 15vw, 78px);
+        line-height: .9;
+        letter-spacing: -5px;
+    }
+
+    .hero-content > p {
+        margin: 25px 0;
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .cashback-btn {
+        min-height: 50px;
+        padding: 0 22px;
+        font-size: 13px;
+    }
+
+    .hero-buttons .cashback-btn {
+        flex: 1 1 100%;
+    }
+
+    .hero-card {
+        min-height: 310px;
+        padding: 35px 30px;
+        border-radius: 30px;
+    }
+
+    .hero-card > span {
+        font-size: 9px;
+        letter-spacing: 1.7px;
+    }
+
+    .hero-card strong {
+        margin: 18px 0 4px;
+        font-size: clamp(100px, 29vw, 150px);
+        letter-spacing: -8px;
+    }
+
+    .hero-card strong span {
+        font-size: .35em;
+        letter-spacing: -1px;
+    }
+
+    .hero-card p {
+        font-size: 15px;
+    }
+
+    .hero-card-line {
+        margin: 25px 0 15px;
+    }
+
+    .hero-card small {
+        font-size: 11px;
+    }
+
+    .cashback-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding-top: 20px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .stat-card {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding: 25px;
+        border-radius: 22px;
+    }
+
+    .stat-card strong {
+        margin: 0;
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .stat-card span {
+        font-size: 13px;
+    }
+
+    .cashback-calculator {
+        gap: 30px;
+    }
+
+    .calculator-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 28px 25px;
+        border-radius: 28px;
+    }
+
+    .calculator-input label {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .price-input input {
+        font-size: 30px;
+    }
+
+    .price-input span {
+        font-size: 21px;
+    }
+
+    .calculator-result {
+        padding-left: 0;
+        padding-top: 25px;
+        border-left: 0;
+        border-top: 1px solid #292929;
+    }
+
+    .calculator-result strong {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+
+    .how-it-works {
+        padding-top: 50px !important;
+    }
+
+    .steps {
+        gap: 10px;
+    }
+
+    .step-card {
+        min-height: 270px;
+        padding: 28px;
+        border-radius: 24px;
+    }
+
+    .step-icon {
+        width: 48px;
+        height: 48px;
+        margin-top: 40px;
+        font-size: 19px;
+    }
+
+    .step-card h3 {
+        margin: 20px 0 8px;
+        font-size: 22px;
+    }
+
+    .step-card p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .cashback-promo {
+        display: block;
+        min-height: 510px;
+        margin-top: 15px !important;
+        padding: 45px 25px !important;
+        border-radius: 30px;
+    }
+
+    .cashback-promo::before {
+        width: 380px;
+        height: 380px;
+        right: -170px;
+        top: 70%;
+    }
+
+    .promo-content {
+        max-width: 100%;
+        z-index: 3;
+    }
+
+    .promo-content h2 {
+        font-size: clamp(48px, 14vw, 70px);
+        line-height: .9;
+        letter-spacing: -4px;
+    }
+
+    .promo-content p {
+        max-width: 320px;
+        margin: 25px 0;
+        font-size: 15px;
+    }
+
+    .promo-percent {
+        right: -10px;
+        bottom: 5px;
+        top: auto;
+        margin: 0;
+        transform: rotate(-8deg);
+        opacity: .35;
+    }
+
+    .promo-percent span {
+        margin-top: 20px;
+        font-size: 22px;
+    }
+
+    .promo-percent strong {
+        font-size: 150px;
+        letter-spacing: -12px;
+    }
+
+    .promo-percent small {
+        margin-top: 20px;
+        font-size: 30px;
+    }
+
+    .social-cashback {
+        padding-bottom: 55px !important;
+    }
+
+    .social-buttons {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .social-card {
+        padding: 23px 25px;
+        border-radius: 20px;
+    }
+
+    .social-card span {
+        font-size: 19px;
+    }
+
+    .social-card small {
+        font-size: 12px;
+    }
+
+    .social-card strong {
+        font-size: 22px;
+    }
+
+    .cashback-faq {
+        gap: 30px;
+    }
+
+    .faq-question {
+        padding: 21px 0;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .faq-plus {
+        flex-shrink: 0;
+        margin-left: 15px;
+        font-size: 23px;
+    }
+
+    .faq-answer p {
+        padding-bottom: 22px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .cashback-final {
+        padding-top: 65px !important;
+        padding-bottom: 100px !important;
+    }
+
+    .cashback-final h2 {
+        margin-bottom: 30px;
+        font-size: clamp(48px, 14vw, 72px);
+        letter-spacing: -4px;
+    }
+
+    .cashback-final .cashback-btn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .cashback-page section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .cashback-hero {
+        padding-top: 45px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+        letter-spacing: -4px;
+    }
+
+    .hero-card {
+        min-height: 280px;
+        padding: 30px 25px;
+    }
+
+    .hero-card strong {
+        font-size: 95px;
+    }
+
+    .calculator-card {
+        padding: 25px 20px;
+    }
+
+    .promo-content h2 {
+        font-size: 46px;
+    }
+
+    .cashback-final h2 {
+        font-size: 46px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+    .cashback-btn:hover,
+    .stat-card:hover,
+    .step-card:hover,
+    .social-card:hover {
+        transform: none;
+    }
+
+    .cashback-btn.primary:hover::before {
+        transform: translateX(-100%) rotate(15deg);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    
+    body:has(.catalog.active-mobile) {
+        overflow: hidden;
+    }
+
+    .catalog {
+        position: fixed;
+        top: 130px;
+        margin: 0;
+        z-index: 9999;
+    }
+}

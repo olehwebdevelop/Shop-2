@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Portfolio Shop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="repair.css">
+    <link rel="stylesheet" href="repairCategory.css">
+</head>
+<body>
+    <div class="header-top">
+        <div class="header-top-center">
+            <div class="header-top-center-item">
+                <a href="https://t.me/Iceonlyone">News</a>
+            </div>
+            <div class="header-top-center-item">
+                <a href="#shares">Shares</a>
+            </div>
+            <div class="header-top-center-item">
+                <a href="https://www.freelancer.com.ua/u/olehwebdevelop?sb=t">Vacancies</a>
+            </div>
+            <div class="header-top-center-item">
+                <a href="/CashBack.html">Cashback</a>
+            </div>
+        </div>
+        <div class="header-top-right">
+            <div class="header-top-right-item">
+                <div class="lang-switcher">
+                <a class="lang-label active" id="en-toggle">EN</a>
+                <label class="switch">
+                    <input type="checkbox" id="lang-toggle">
+                    <span class="slider"></span>
+                </label>
+                <a class="lang-label" id="ua-toggle">UA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sticky-header-container">
+    <div class="mobile-nav-bar">
+        <button class="mobile-catalog-btn">
+            <span class="mobile-catalog-btn-svg">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://w3.org" style="margin-right: 8px;">
+                    <path d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z"/>
+                </svg>
+            </span>
+        </button>
+        <div class="logo logo-mobile">
+            <a href="/index.html">Shop</a>
+        </div>
+        <button class="mobile-basket-btn">
+            <svg xmlns="http://w3.org" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="8" cy="21" r="1"/>
+                <circle cx="19" cy="21" r="1"/>
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+            </svg>
+        </button>
+    </div>
+    <div class="mobile-search-wrapper">
+        <div class="search-container">
+            <span class="search-icon"> 
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg> 
+            </span>
+            <input type="text" id="search-input" placeholder="Samsung Galaxy">
+            <div class="search-dropdown">
+                <div class="search-section">
+                    <div class="section-header">Categories</div>
+                    <div class="found-categories">
+                        <a href="#" class="category-row">
+                            <span class="cat-name">Item <!-- from DB --></span>
+                            <span class="cat-count">Num <!-- from DB --></span>
+                        </a>
+                        <a href="#" class="category-row">
+                            <span class="cat-name">Item <!-- from DB --> </span>
+                            <span class="cat-count">Num <!-- from DB --></span>
+                        </a>
+                        <a href="#" class="category-row">
+                            <span class="cat-name">Item <!-- from DB --> </span>
+                            <span class="cat-count">Num <!-- from DB --></span>
+                        </a>
+                    </div>
+                    <button class="more-categories-btn">More categories ▾</button>
+                </div>
+                <div class="search-section">
+                    <div class="section-header">Goods</div>
+                    <div class="found-items">
+                        <a href="#" class="product-row">
+                            <div class="product-thumb">
+                                <div style="background: #2c2c2e; width: 100%; height: 100%; border-radius: 6px;"></div>
+                            </div>
+                            <div class="product-details">
+                                <span class="product-title">Item <!-- from DB --></span>
+                                <div class="product-prices">
+                                    <span class="current-price">Price <!-- from DB --></span>
+                                    <span class="old-price">Price <!-- from DB --></span>
+                                </div>
+                            </div>
+                            <span class="buy-btn">Buy</span>
+                        </a>
+                        <a href="#" class="product-row">
+                            <div class="product-thumb">
+                                <div style="background: #2c2c2e; width: 100%; height: 100%; border-radius: 6px;"></div>
+                            </div>
+                            <div class="product-details">
+                                <span class="product-title">Item <!-- from DB --></span>
+                                <div class="product-prices">
+                                    <span class="current-price">Price <!-- from DB --></span>
+                                    <span class="old-price">Price <!-- from DB --></span>
+                                </div>
+                            </div>
+                            <span class="buy-btn">Buy</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-btns-container">
+        <div class="btns-container">
+            <button class="nav-btn" id="repair">Repair<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+                <circle cx="12" cy="12" r="3"/>
+                </svg>
+            </button>
+            <button class="nav-btn" id="support">Support<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <path d="M8 10h.01"/>
+                <path d="M12 10h.01"/>
+                <path d="M16 10h.01"/>
+                </svg>
+            </button>
+            <button class="nav-btn" id="office">Office<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </button>
+            <div class="basket-wrapper">
+                <button class="nav-btn" id="basketBtn">Basket<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="8" cy="21" r="1"/>
+                    <circle cx="19" cy="21" r="1"/>
+                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                    </svg>
+                </button>
+                <div class="basket-menu">
+                    <div class="basket-menu-item">
+                        <p>There is nothing here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <nav class="nav-bar">
+        <div class="logo">
+            <a href="/index.html">Shop</a>
+        </div>
+        <span class="catalog-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://w3.org" style="margin-right: 8px;">
+            <path d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z"/>
+        </svg>
+        Catalog
+        </span>
+        <div class="search-container">
+            <span class="search-icon"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg> 
+            </span>
+            <input type="text" id="search-input" placeholder="iPhone 17">
+            <div class="search-dropdown">
+                <div class="search-section">
+                    <div class="section-header">Categories</div>
+                    <div class="found-categories">
+                        <a href="#" class="category-row">
+                            <span class="cat-name">Item <!-- from DB --></span>
+                            <span class="cat-count">Num <!-- from DB --></span>
+                        </a>
+                        <a href="#" class="category-row">
+                            <span class="cat-name">Item <!-- from DB --> </span>
+                            <span class="cat-count">Num <!-- from DB --></span>
+                        </a>
+                        <a href="#" class="category-row">
+                            <span class="cat-name">Item <!-- from DB --> </span>
+                            <span class="cat-count">Num <!-- from DB --></span>
+                        </a>
+                    </div>
+                    <button class="more-categories-btn">More categories ▾</button>
+                </div>
+                <div class="search-section">
+                    <div class="section-header">Goods</div>
+                    <div class="found-items">
+                        <a href="#" class="product-row">
+                            <div class="product-thumb">
+                                <div style="background: #2c2c2e; width: 100%; height: 100%; border-radius: 6px;"></div>
+                            </div>
+                            <div class="product-details">
+                                <span class="product-title">Item <!-- from DB --></span>
+                                <div class="product-prices">
+                                    <span class="current-price">Price <!-- from DB --></span>
+                                    <span class="old-price">Price <!-- from DB --></span>
+                                </div>
+                            </div>
+                            <span class="buy-btn">Buy</span>
+                        </a>
+                        <a href="#" class="product-row">
+                            <div class="product-thumb">
+                                <div style="background: #2c2c2e; width: 100%; height: 100%; border-radius: 6px;"></div>
+                            </div>
+                            <div class="product-details">
+                                <span class="product-title">Item <!-- from DB --></span>
+                                <div class="product-prices">
+                                    <span class="current-price">Price <!-- from DB --></span>
+                                    <span class="old-price">Price <!-- from DB --></span>
+                                </div>
+                            </div>
+                            <span class="buy-btn">Buy</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btns-container">
+            <button class="nav-btn" id="repair">Repair<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+                <circle cx="12" cy="12" r="3"/>
+                </svg>
+            </button>
+            <button class="nav-btn" id="support">Support<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <path d="M8 10h.01"/>
+                <path d="M12 10h.01"/>
+                <path d="M16 10h.01"/>
+                </svg>
+            </button>
+            <button class="nav-btn" id="office">Office<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </button>
+            <div class="basket-wrapper">
+                <button class="nav-btn" id="basketBtn">Basket<svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="8" cy="21" r="1"/>
+                    <circle cx="19" cy="21" r="1"/>
+                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                    </svg>
+                </button>
+                <div class="basket-menu">
+                    <div class="basket-menu-item">
+                        <p>There is nothing here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="menu-container">
+        <div class="catalog">
+            <ul>
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 64 64">
+                            <g>
+                                <polygon fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" points="21.903,5 55,38.097 34.097,59 1,25.903 1,5 "/>
+                                <polyline fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" points="29.903,5 63,38.097 42.097,59 "/>
+                                <circle fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" cx="14" cy="18" r="5"/>
+                            </g>
+                        </svg>
+                        <span>On sale</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/category.html?cat=apple">
+                        <img src="Apple.webp" alt="Apple">
+                        <span>Apple</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="IphoneCatItem.webp">
+                                <span>Apple Iphone</span>
+                            </h4>
+                            <a href="#">Iphone 18 Pro Max</a>
+                            <a href="#">Iphone 18 Pro</a>
+                            <a href="#">Iphone 18</a>
+                            <a href="#">Iphone Duo</a>
+                            <a href="#">Aiphone 17 Pro Max</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="WatchAppleCatItem.webp">
+                                <span>Apple Watch</span>
+                            </h4>
+                            <a href="#">Watch Series 12</a>
+                            <a href="#">Watch Ultra 4</a>
+                            <a href="#">Watch SE 3</a>
+                            <a href="#">Watch Series 11</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="PeripheryApple.webp">
+                                <span>Periphery</span>
+                            </h4>
+                            <a href="#">Apple Computer mices</a>
+                            <a href="#">Apple Keyboards</a>
+                            <a href="#">Apple Pencils</a>
+                            <a href="#">Ipad Keyboard Cases</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="AppleIpad.webp">
+                                <span>Apple IPad</span>
+                            </h4>
+                            <a href="#">IPad</a>
+                            <a href="#">IPad Air</a>
+                            <a href="#">IPad Pro</a>
+                            <a href="#">IPad Mini</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="MacBookApple.webp">
+                                <span>Apple Mac</span>
+                            </h4>
+                            <a href="#">MacBook Air</a>
+                            <a href="#">MacBook Pro</a>
+                            <a href="#">MacBook Neo</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="OtherApple.webp">
+                                <span>Other from Apple</span>
+                            </h4>
+                            <a href="#">Apple TV</a>
+                            <a href="#">Apple HomePod</a>
+                            <a href="#">Apple HomePod mini</a>
+                            <a href="#">Apple AirTag</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li> 
+                <li>
+                    <a href="/category.html?cat=samsung">
+                        <img src="samsung.webp" alt="Samsung">
+                        <span>Samsung</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="SamsPhone.webp">
+                                <span>Samsung Phones</span>
+                            </h4>
+                            <a href="#">Galaxy S26 Ultra</a>
+                            <a href="#">Galaxy S26</a>
+                            <a href="#">Galaxy S26 FE</a>
+                            <a href="#">Galaxy S26+</a>
+                            <a href="#">Galaxy S25 Ultra</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="SamsWatch.webp">
+                                <span>Samsung Watches</span>
+                            </h4>
+                            <a href="#">Galaxy Watch Ultra 2</a>
+                            <a href="#">Galaxy Watch 9</a>
+                            <a href="#">Galaxy Watch Ultra</a>
+                            <a href="#">Galaxy Watch 8</a>
+                            <a href="#">Galaxy Watch 8 Classic</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="SamsMoni.webp">
+                                <span>Samsung Monitors</span>
+                            </h4>
+                            <a href="#">Oddysey G8</a>
+                            <a href="#">Oddysey G7</a>
+                            <a href="#">Oddysey G6</a>
+                            <a href="#">Essential S4</a>
+                            <a href="#">Essential S3</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="OtherSams.webp">
+                                <span>Other from Samsung</span>
+                            </h4>
+                            <a href="#">Vacuum cleaners</a>
+                            <a href="#">Robot vacuum cleaners</a>
+                            <a href="#">Projectors</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li> 
+                <li>
+                    <a href="/category.html?cat=smartphones">
+                        <img src="otherphone.webp" alt="Other Smartphones">
+                        <span>Other Smartphones</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="GooglePhones.webp">
+                                <span>Google</span>
+                            </h4>
+                            <a href="#">Pixel 11</a>
+                            <a href="#">Pixel 11 Pro</a>
+                            <a href="#">Pixel 11 Pro XL</a>
+                            <a href="#">Pixel 10 Pro XL</a>
+                            <a href="#">Pixel 10 Pro</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="XiaomiPhones.webp">
+                                <span>Xiaomi</span>
+                            </h4>
+                            <a href="#">Xiaomi 17 Ultra</a>
+                            <a href="#">Xiaomi 17</a>
+                            <a href="#">Xiaomi 17T</a>
+                            <a href="#">Xiaomi 17T Pro</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="PocoPhones.webp">
+                                <span>POCO</span>
+                            </h4>
+                            <a href="#">POCO C85</a>
+                            <a href="#">POCO C81 Pro</a>
+                            <a href="#">POCO F7</a>
+                            <a href="#">POCO F8 Pro</a>
+                            <a href="#">POCO F8 Ultra</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="RedmiPhones.webp">
+                                <span>Redmi</span>
+                            </h4>
+                            <a href="#">Redmi A7 Pro</a>
+                            <a href="#">Redmi 17</a>
+                            <a href="#">Redmi Note 17</a>
+                            <a href="#">Redmi 15</a>
+                            <a href="#">Redmi 15C</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="OnePlusPhones.webp">
+                                <span>OnePlus</span>
+                            </h4>
+                            <a href="#">OnePlus 15</a>
+                            <a href="#">OnePlus 15R</a>
+                            <a href="#">OnePlus 13S</a>
+                            <a href="#">OnePlus 13R</a>
+                            <a href="#">OnePlus 13</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/category.html?cat=watchs">
+                        <img src="watch.webp" alt="Smart watches">
+                        <span>Smart watches</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="WatchAppleCatItem.webp">
+                                <span>Apple Watch</span>
+                            </h4>
+                            <a href="#">Watch Series 12</a>
+                            <a href="#">Watch Ultra 4</a>
+                            <a href="#">Watch SE 3</a>
+                            <a href="#">Watch Series 11</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="SamsWatch.webp">
+                                <span>Samsung Watches</span>
+                            </h4>
+                            <a href="#">Galaxy Watch Ultra 2</a>
+                            <a href="#">Galaxy Watch 9</a>
+                            <a href="#">Galaxy Watch Ultra</a>
+                            <a href="#">Galaxy Watch 8</a>
+                            <a href="#">Galaxy Watch 8 Classic</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="XiaomiWatch.webp">
+                                <span>Xiaomi</span>
+                            </h4>
+                            <a href="#">Watch 6</a>
+                            <a href="#">Watch 5</a>
+                            <a href="#">Watch 5 Active</a>
+                            <a href="#">Watch S5</a>
+                            <a href="#">Watch 5 Lite</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="HuaweiWatch.webp">
+                                <span>Huawei</span>
+                            </h4>
+                            <a href="#">Watch D2</a>
+                            <a href="#">Watch GT 6</a>
+                            <a href="#">Watch GT 6 Pro</a>
+                            <a href="#">Watch GT 5</a>
+                            <a href="#">Watch GT 5 Pro</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="GoogleWatch.webp">
+                                <span>Google</span>
+                            </h4>
+                            <a href="#">Pixel Watch 4</a>
+                            <a href="#">Pixel Watch 3</a>
+                            <a href="#">Pixel Watch 2</a>
+                            <a href="#">Fitbit Air</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/category.html?cat=console">
+                        <img src="console.webp" alt="Game consoles">
+                        <span>Game consoles</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="GameConsoleCat.webp">
+                                <span>Sony PlayStation</span>
+                            </h4>
+                            <a href="#">PlayStation 5 Pro</a>
+                            <a href="#">PlayStation 5</a>
+                            <a href="#">PlayStation 5 Slim</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Xbox.webp">
+                                <span>Microsoft Xbox</span>
+                            </h4>
+                            <a href="#">Series X</a>
+                            <a href="#">Series S</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="SteamDeck.webp">
+                                <span>Valve Steam Deck</span>
+                            </h4>
+                            <a href="#">Steam Deck</a>
+                            <a href="#">Steam Machine</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Nintendo.webp">
+                                <span>Nintendo</span>
+                            </h4>
+                            <a href="#">Nintendo Switch 2</a>
+                            <a href="#">Nintendo Switch</a>
+                            <a href="#">Nintendo Switch Lite</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/category.html?cat=Televisionsandmedia">
+                        <img src="tv.webp" alt="Televisions and media">
+                        <span>Televisions and media</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="TVCatItem.webp">
+                                <span>Televisions</span>
+                            </h4>
+                            <a href="#">Samsung</a>
+                            <a href="#">Hisense</a>
+                            <a href="#">Xiaomi</a>
+                            <a href="#">LG</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Projectors.webp">
+                                <span>Projectors</span>
+                            </h4>
+                            <a href="#">Portable</a>
+                            <a href="#">Stationary</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="MediaAudio.webp">
+                                <span>Multimedia and sound</span>
+                            </h4>
+                            <a href="#">Acoustics for home</a>
+                            <a href="#">Smart speakers</a>
+                            <a href="#">Soundbars</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/category.html?cat=laptopsandpc">
+                        <img src="laptopandpc.webp" alt="Laptops and PC">
+                        <span>Laptops and PC</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="LaptopsCatItem.webp">
+                                <span>Laptops</span>
+                            </h4>
+                            <a href="#">Lenovo</a>
+                            <a href="#">Asus</a>
+                            <a href="#">Acer</a>
+                            <a href="#">Gigabyte</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="PCs.webp">
+                                <span>Computers</span>
+                            </h4>
+                            <a href="#">System units</a>
+                            <a href="#">Monoblocks</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="PCsItems.webp">
+                                <span>PC components</span>
+                            </h4>
+                            <a href="#">Processors</a>
+                            <a href="#">Graphics cards</a>
+                            <a href="#">Motherboards</a>
+                            <a href="#">RAM</a>
+                            <a href="#">SSD storage</a>
+                            <a href="#">HDD storage</a>
+                            <a href="#">Cooling systems</a>
+                            <a href="#">Power supplies</a>
+                            <a href="#">PC cases</a>
+                            <a href="#">Thermal paste</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Moni.webp">
+                                <span>Monitors</span>
+                            </h4>
+                            <a href="#">MSI</a>
+                            <a href="#">Asus</a>
+                            <a href="#">Samsung</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="GamePeriphery.webp">
+                                <span>Gaming peripherals</span>
+                            </h4>
+                            <a href="#">Mices</a>
+                            <a href="#">Keyboards</a>
+                            <a href="#">Headphones</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/category.html?cat=gamezone">
+                        <img src="gamezone.webp" alt="Play area">
+                        <span>Play area</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="LaptopsCatItem.webp">
+                                <span>Gaming Laptops</span>
+                            </h4>
+                            <a href="#">Lenovo</a>
+                            <a href="#">Asus</a>
+                            <a href="#">Acer</a>
+                            <a href="#">Gigabyte</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="PCs.webp">
+                                <span>Computers</span>
+                            </h4>
+                            <a href="#">System units</a>
+                            <a href="#">Monoblocks</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="GamePeriphery.webp">
+                                <span>Gaming peripherals</span>
+                            </h4>
+                            <a href="#">Mices</a>
+                            <a href="#">Keyboards</a>
+                            <a href="#">Headphones</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="GameConsoleCat.webp">
+                                <span>Game consoles</span>
+                            </h4>
+                            <a href="#">PlayStation</a>
+                            <a href="#">Xbox</a>
+                            <a href="#">Nintendo</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="PCsItems.webp">
+                                <span>PC components</span>
+                            </h4>
+                            <a href="#">Processors</a>
+                            <a href="#">Graphics cards</a>
+                            <a href="#">Motherboards</a>
+                            <a href="#">RAM</a>
+                            <a href="#">SSD storage</a>
+                            <a href="#">HDD storage</a>
+                            <a href="#">Cooling systems</a>
+                            <a href="#">Power supplies</a>
+                            <a href="#">PC cases</a>
+                            <a href="#">Thermal paste</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/category.html?cat=tablets">
+                        <img src="tabletsandebooks.webp" alt="Tablets and e-books">
+                        <span>Tablets and e-books</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="EBooks.webp">
+                                <span>E-readers</span>
+                            </h4>
+                            <a href="#">Amazon</a>
+                            <a href="#">BOOX</a>
+                            <a href="#">reMarkable</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="AppleIpad.webp">
+                                <span>Apple Tablets</span>
+                            </h4>
+                            <a href="#">iPad</a>
+                            <a href="#">iPad Air</a>
+                            <a href="#">iPad Pro</a>
+                            <a href="#">iPad Mini</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="AcsEbook.webp">
+                                <span>E-reader Accessories</span>
+                            </h4>
+                            <a href="#">Covers & Cases</a>
+                            <a href="#">Protective Glass & Film</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="SamsTabl.webp">
+                                <span>Samsung Tablets</span>
+                            </h4>
+                            <a href="#">Galaxy Tab S11 Ultra</a>
+                            <a href="#">Galaxy Tab S11</a>
+                            <a href="#">Galaxy Tab A11</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="LenovoTabl.webp">
+                                <span>Lenovo Tablets</span>
+                            </h4>
+                            <a href="#">Lenovo Tab Plus</a>
+                            <a href="#">Lenovo Idea Tab Pro</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="XiaomiTabl.webp">
+                                <span>Xiaomi Tablets</span>
+                            </h4>
+                            <a href="#">Xiaomi Redmi Pad 2 Pro</a>
+                            <a href="#">Xiaomi Redmi Pad 2</a>
+                            <a href="#">Xiaomi Pad 8</a>
+                            <a href="#">Xiaomi Pad 8 Pro</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Accstabl.webp">
+                                <span>Tablet Accessories</span>
+                            </h4>
+                            <a href="#">Keyboards & Peripherals</a>
+                            <a href="#">Covers & Cases</a>
+                            <a href="#">Protective Glass & Film</a>
+                            <a href="#">Power Adapters</a>
+                            <a href="#">Power Cables</a>
+                            <a href="#">Adapters & Hubs</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/category.html?cat=photoandvideo">
+                        <img src="photoandvideo.webp" alt="Digital cameras and video">
+                        <span>Photos and videos</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="PhotoCam.webp">
+                                <span>Digital Cameras</span>
+                            </h4>
+                            <a href="#">Canon</a>
+                            <a href="#">Nikon</a>
+                            <a href="#">Sony</a>
+                            <a href="#">Fujifilm</a>
+                            <a href="#">Leica</a>
+                            <a href="#">Panasonic</a>
+                            <a href="#">Lenses</a>
+                            <a href="#">Accessories</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="ActionCam.webp">
+                                <span>Action Cameras</span>
+                            </h4>
+                            <a href="#">GoPro Cameras</a>
+                            <a href="#">DJI Cameras</a>
+                            <a href="#">Insta360 Cameras</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="PhotoCam2.webp">
+                                <span>Instant Cameras</span>
+                            </h4>
+                            <a href="#">Cameras</a>
+                            <a href="#">Photo Printers</a>
+                            <a href="#">Accessories</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="PhotoAcs.webp">
+                                <span>Photo Accessories</span>
+                            </h4>
+                            <a href="#">Action Camera Accessories</a>
+                            <a href="#">Camera Accessories</a>
+                            <a href="#">Camcorder Accessories</a>
+                            <a href="#">Tripods & Monopods</a>
+                            <a href="#">Photo Paper for Cameras</a>
+                            <a href="#">Camera Lenses</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="VideoCam.webp">
+                                <span>Dash Cams</span>
+                            </h4>
+                            <a href="#">Garmin</a>
+                            <a href="#">Blackvue</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/category.html?cat=audio">
+                        <img src="audio.webp" alt="Audio and Acoustics">
+                        <span>Audio and Acoustics</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="audio.webp">
+                                <span>Headphones</span>
+                            </h4>
+                            <a href="#">Apple Headphones</a>
+                            <a href="#">Marshall Headphones</a>
+                            <a href="#">JBL Headphones</a>
+                            <a href="#">Sony Headphones</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="HeadPhonesTypes.webp">
+                                <span>Headphones by Type</span>
+                            </h4>
+                            <a href="#">True Wireless (TWS)</a>
+                            <a href="#">On-Ear Headphones</a>
+                            <a href="#">In-Ear Headphones</a>
+                            <a href="#">Gaming Headsets</a>
+                            <a href="#">Wired Headphones</a>
+                            <a href="#">With ANC</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="PortAud.webp">
+                                <span>Portable Speakers</span>
+                            </h4>
+                            <a href="#">Marshall Speakers</a>
+                            <a href="#">JBL Speakers</a>
+                            <a href="#">Harman / Kardon Speakers</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Acoustics.webp">
+                                <span>Audio Systems</span>
+                            </h4>
+                            <a href="#">Home Audio</a>
+                            <a href="#">Soundbars</a>
+                            <a href="#">Turntables</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/category.html?cat=health">
+                        <img src="health.webp" alt="Beauty and health">
+                        <span>Beauty & Health</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="HairHealth.webp">
+                                <span>Hair Care</span>
+                            </h4>
+                            <a href="#">Stylers</a>
+                            <a href="#">Hair dryers</a>
+                            <a href="#">Hair dryer stylers</a>
+                            <a href="#">Blow dry brushes</a>
+                            <a href="#">Hair straighteners</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="ManHealth.webp">
+                                <span>Men's Grooming</span>
+                            </h4>
+                            <a href="#">Electric shavers</a>
+                            <a href="#">Trimmers</a>
+                            <a href="#">Accessories</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Tooth.webp">
+                                <span>Dental Care</span>
+                            </h4>
+                            <a href="#">Toothbrushes</a>
+                            <a href="#">Oral irrigators</a>
+                            <a href="#">Brush heads</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="epilator.webp">
+                                <span>Epilators</span>
+                            </h4>
+                            <a href="#">IPL epilators</a>
+                            <a href="#">Epilators</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Masage.webp">
+                                <span>Massagers</span>
+                            </h4>
+                            <a href="#">Facial massagers</a>
+                            <a href="#">Eye massagers</a>
+                            <a href="#">Body massagers</a>
+                            <a href="#">Foot massagers</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Cosmetics.webp">
+                                <span>Beauty Devices</span>
+                            </h4>
+                            <a href="#">Medicube</a>
+                            <a href="#">Therabody</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Scale.webp">
+                                <span>Scales</span>
+                            </h4>
+                            <a href="#">Withings</a>
+                            <a href="#">Renpho</a>
+                            <a href="#">Eufy</a>
+                            <a href="#">Omron</a>
+                            <a href="#">Etekcity</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/category.html?cat=home">
+                        <img src="HomeCat.webp" alt="Home Appliances">
+                        <span>Home Appliances</span>
+                        <span class="arrow">&rsaquo;</span>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <h4>
+                                <img src="VacuumsRobo.webp">
+                                <span>Robot Vacuums</span>
+                            </h4>
+                            <a href="#">Xiaomi</a>
+                            <a href="#">Dreame</a>
+                            <a href="#">Ecovacs</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="HandVacuums.webp">
+                                <span>Handheld Vacuums</span>
+                            </h4>
+                            <a href="#">Dyson</a>
+                            <a href="#">Dreame</a>
+                            <a href="#">Philips</a>
+                            <a href="#">Rowenta</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Vacuums.webp">
+                                <span>Vacuum Cleaners</span>
+                            </h4>
+                            <a href="#">Bosch</a>
+                            <a href="#">Rowenta</a>
+                            <a href="#">Samsung</a>
+                            <a href="#">Philips</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="steamgenerator.webp">
+                                <span>Steam Generators</span>
+                            </h4>
+                            <a href="#">Philips</a>
+                            <a href="#">Braun</a>
+                            <a href="#">Tefal</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Steam1.webp">
+                                <span>Garment Steamers</span>
+                            </h4>
+                            <a href="#">Handheld</a>
+                            <a href="#">Standing</a>
+                            <a href="#">Philips</a>
+                            <a href="#">Tefal</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Steam2.webp">
+                                <span>Ironing Systems</span>
+                            </h4>
+                            <a href="#">Tefal</a>
+                            <a href="#">Laurastar</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="Steam3.webp">
+                                <span>Irons</span>
+                            </h4>
+                            <a href="#">Tefal</a>
+                            <a href="#">Philips</a>
+                            <a href="#">Braun</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="zoo.webp">
+                                <span>Pet Supplies</span>
+                            </h4>
+                            <a href="#">Feeders</a>
+                            <a href="#">Drinkers</a>
+                            <a href="#">Litter Boxes</a>
+                            <a href="#">Smart Cameras</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>
+                                <img src="SmartHosue.webp">
+                                <span>Smart Home</span>
+                            </h4>
+                            <a href="#">Security</a>
+                            <a href="#">Cameras</a>
+                            <a href="#">Intercoms</a>
+                            <a href="#">Access Control</a>
+                            <a href="#" class="show-all">Show all &gt;&gt;</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="repair-section">
+        <div class="left-column">
+            <div class="top-header">
+                <button type="button" class="back-btn" id="back-btn" aria-label="Back">&lt;</button>
+                <h2>Select model</h2>
+            </div>
+            <div class="main-banner">
+                <img src="device-preview.png" alt="Device preview" class="banner-image">
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <div class="device-card"></div>
+            <button type="button" id="load-more-btn" class="load-more-btn">More models</button>
+        </div>
+    </div>
+    <footer class="site-footer" id="shares">
+        <div class="footer-container">
+            <div class="footer-col footer-col-main">
+            <h3 class="footer-title">Products</h3>
+            <ul class="footer-links-grid">
+                <li><a href="#" class="sale-link">Discounts and promotions</a></li>
+                <li><a href="#">Apple</a></li>
+                <li><a href="#">Samsung</a></li>
+                <li><a href="#">Other smartphones</a></li>
+                <li><a href="#">Smart watches</a></li>
+                <li><a href="#">Game consoles</a></li>
+                <li><a href="#">Televisions and media</a></li>
+                <li><a href="#">Laptops and PCs</a></li>
+                <li><a href="#">Play area</a></li>
+                <li><a href="#">Tablets and e-books</a></li>
+                <li><a href="#">Photos and videos</a></li>
+                <li><a href="#">Audio</a></li>
+                <li><a href="#">Beauty and health</a></li>
+                <li><a href="#">Household appliances</a></li>
+            </ul>
+            </div>
+            <div class="footer-col">
+            <h3 class="footer-title">Services</h3>
+            <ul class="footer-links">
+                <li><a href="#">Repair</a></li>
+                <li><a href="#">Vacancies</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+            </div>
+            <div class="footer-col">
+            <h3 class="footer-title">Information</h3>
+            <ul class="footer-links">
+                <li><a href="#">Vacancies</a></li>
+                <li><a href="#">Warranty and service</a></li>
+                <li><a href="#">Delivery and payment</a></li>
+                <li><a href="#">Public offer agreement</a></li>
+                <li><a href="#">Shops</a></li>
+            </ul>
+            </div>
+            <div class="footer-col footer-col-contacts">
+            <h3 class="footer-title">For contact and questions</h3>
+            <div class="contact-info">
+                <a href="https://github.com/olehwebdevelop" class="email">info@portfolio.website</a>
+                <a href="https://github.com/olehwebdevelop" class="phone">+1 (777) 555-0177<span>(from 9:00 to 22:00)</span></a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/olehwebdevelop/" aria-label="Instagram">Instagram</a>
+                <a href="https://olehwebdevelop.github.io/Portfolio/" aria-label="Portfolio">Portfolio</a>
+                <a href="https://github.com/olehwebdevelop" aria-label="GitHub">GitHub</a>
+                <a href="https://t.me/Iceonlyone" aria-label="Telegram">Telegram</a>
+            </div>
+            <div class="payment-methods">
+                <span class="pay-badge">VISA</span>
+                <span class="pay-badge">Mastercard</span>
+                <span class="pay-badge">Apple Pay</span>
+            </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="mobile-footer">
+        <a href="https://github.com/olehwebdevelop" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.69-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.03 1.75 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18A10.9 10.9 0 0 1 12 6.02c.97 0 1.94.13 2.85.38 2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+            </svg>
+        </a>
+        <a href="https://t.me/Iceonlyone" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                <path d="M21.9 3.6 18.7 20c-.24 1.16-.88 1.45-1.78.9l-4.92-3.63-2.37 2.28c-.26.26-.48.48-.98.48l.35-5 9.1-8.22c.4-.35-.09-.55-.62-.2L6.22 13.9l-4.82-1.51c-1.05-.33-1.07-1.05.22-1.55L20.47 3.3c.88-.33 1.65.2 1.43.3Z"/>
+            </svg>
+        </a>
+        <a href="https://www.instagram.com/olehwebdevelop?stkn=MXMxdDY4ankxN3pibw%3D%3D&utm_source=qr" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+        </a>
+        <a href="www.tiktok.com/@olehwebdev" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.1h-3.13v13.72a2.9 2.9 0 1 1-2.9-2.9c.3 0 .59.05.86.14v-3.2a6.12 6.12 0 1 0 5.17 6.04V9.42a7.95 7.95 0 0 0 4.65 1.5V7.79a4.83 4.83 0 0 1-.88-.1Z"/>
+            </svg>
+        </a>
+    </footer>
+    <div class="shadow"></div>
+    <div id="register" class="account">
+        <button type="button" id="cancelRegister" class="cancel" aria-label="Close">
+            <svg class="cancel-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <h1 class="account-name">Registration</h1>
+        <form class="account-container">
+            <label for="register-email">Enter Your Email
+                <input id="register-email" name="email" type="email" required placeholder="Email..." autocomplete="email">
+            </label>
+            <label for="register-password">Enter Your Password
+                <input id="register-password" name="password" type="password" required minlength="6" placeholder="Password..." autocomplete="new-password">
+            </label>
+            <button type="submit" class="account-btn">Create account</button>
+        </form>
+        <button type="button" id="log-in-a" class="account-a">Log In</button>
+    </div>
+    <div id="log-in" class="account">
+        <button type="button" id="cancelLogin" class="cancel" aria-label="Close">
+            <svg class="cancel-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <h1 class="account-name">Log In</h1>
+        <form class="account-container">
+            <label for="login-email">Enter Your Email
+                <input id="login-email" name="email" type="email" required placeholder="Email..." autocomplete="username">
+            </label>
+            <label for="login-password">Enter Your Password
+                <input id="login-password" name="password" type="password" required placeholder="Password..." autocomplete="current-password">
+            </label>
+            <button type="submit" class="account-btn">Log in</button>
+        </form>
+        <button type="button" id="create" class="account-a">Create an account</button>
+    </div>
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <div class="chat-title">
+            <span class="status-dot"></span>
+            Support
+            </div>
+            <button class="chat-close" id="chatClose" aria-label="Закрити чат">&times;</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message incoming">
+            Congratulations! How can we help you?
+            </div>
+        </div>
+        <form class="chat-footer" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Write a message..." required autocomplete="off" />
+            <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+        </form>
+    </div>
+    <div id="user-profile" class="account profile">
+        <button type="button" id="closeProfile" class="cancel" aria-label="Close">
+            <svg class="cancel-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="profile-header">
+            <div class="profile-avatar">NN</div>
+            <h2 class="profile-name">NickName</h2>
+            <p class="profile-phone">Number</p>
+        </div>
+        <div class="profile-body">
+            <div class="profile-card">
+                <div class="profile-item">
+                    <span class="label">Personal data</span>
+                    <span class="value">Edit &rsaquo;</span>
+                </div>
+                <div class="profile-item">
+                    <span class="label">My orders</span>
+                    <span class="badge">Num Active</span>
+                </div>
+                <div class="profile-item">
+                    <span class="label">Bonuses</span>
+                    <span class="value highlight">Price</span>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button type="button" class="profile-btn btn-logout">Log out</button>
+                <button type="button" class="profile-btn btn-delete">Delete account</button>
+            </div>
+        </div>
+    </div>
+<script src="./scripts.js"></script>
+<script src="./repair.js"></script>
+<script src="./repairCategory.js"></script>
+</body>
+</html>
