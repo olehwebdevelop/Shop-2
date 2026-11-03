@@ -17,57 +17,95 @@ const PORT = process.env.PORT || 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const frontendPath = path.join(__dirname, '../frontend');
+const possibleDirs = [
+  path.join(__dirname, '../frontend'),
+  path.join(__dirname, 'frontend'),
+  path.join(process.cwd(), 'frontend'),
+  path.join(__dirname, '../public'),
+  path.join(__dirname, 'public'),
+  path.join(process.cwd(), 'public'),
+  __dirname,
+  path.join(__dirname, '..'),
+  process.cwd()
+];
+
+const frontendPath = possibleDirs.find(dir => {
+  try {
+    return fs.existsSync(dir) && fs.existsSync(path.join(dir, 'index.html'));
+  } catch {
+    return false;
+  }
+}) || possibleDirs[0];
 
 connectDB();
 
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(frontendPath, { extensions: ['html'] }));
+possibleDirs.forEach(dir => {
+  if (fs.existsSync(dir)) {
+    app.use(express.static(dir, { extensions: ['html'] }));
+  }
+});
 
 app.use('/api', productRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api', chatRoutes);
 
-const serveHtml = (filename) => (req, res) => {
-  const directPath = path.join(frontendPath, filename);
-  if (fs.existsSync(directPath)) {
-    return res.sendFile(directPath);
-  }
+const findHtmlFile = (filename) => {
+  const cleanName = filename.replace(/\.html$/i, '').toLowerCase();
 
-  const lowerPath = path.join(frontendPath, filename.toLowerCase());
-  if (fs.existsSync(lowerPath)) {
-    return res.sendFile(lowerPath);
-  }
+  for (const dir of possibleDirs) {
+    if (!fs.existsSync(dir)) continue;
+    try {
+      const files = fs.readdirSync(dir);
+      const matched = files.find(f => {
+        const fClean = f.replace(/\.html$/i, '').toLowerCase();
+        return fClean === cleanName && f.toLowerCase().endsWith('.html');
+      });
 
-  res.status(404).send(`Cannot GET ${req.originalUrl}`);
+      if (matched) {
+        return path.join(dir, matched);
+      }
+    } catch {}
+  }
+  return null;
 };
 
-app.get('/', serveHtml('index.html'));
-app.get('/index', serveHtml('index.html'));
-app.get('/index.html', serveHtml('index.html'));
+const handleHtmlRoute = (filename) => (req, res) => {
+  const filePath = findHtmlFile(filename);
+  if (filePath) {
+    return res.sendFile(filePath);
+  }
 
-app.get('/repair', serveHtml('repair.html'));
-app.get('/repair.html', serveHtml('repair.html'));
+  let existing = [];
+  try {
+    if (fs.existsSync(frontendPath)) {
+      existing = fs.readdirSync(frontendPath);
+    }
+  } catch {}
 
-app.get('/repairCategory', serveHtml('repairCategory.html'));
-app.get('/repairCategory.html', serveHtml('repairCategory.html'));
-app.get('/repaircategory', serveHtml('repairCategory.html'));
-app.get('/repaircategory.html', serveHtml('repairCategory.html'));
+  res.status(404).send(`File "${filename}" not found. Directory contains: ${existing.join(', ')}`);
+};
 
-app.get('/repairModel', serveHtml('repairModel.html'));
-app.get('/repairModel.html', serveHtml('repairModel.html'));
-app.get('/repairmodel', serveHtml('repairModel.html'));
-app.get('/repairmodel.html', serveHtml('repairModel.html'));
+app.get('/', handleHtmlRoute('index.html'));
 
-app.get('/category', serveHtml('category.html'));
-app.get('/category.html', serveHtml('category.html'));
+app.get('/:page.html', (req, res, next) => {
+  const filePath = findHtmlFile(`${req.params.page}.html`);
+  if (filePath) {
+    return res.sendFile(filePath);
+  }
+  next();
+});
 
-app.get('/CashBack', serveHtml('CashBack.html'));
-app.get('/CashBack.html', serveHtml('CashBack.html'));
-app.get('/cashback', serveHtml('CashBack.html'));
-app.get('/cashback.html', serveHtml('CashBack.html'));
+app.get('/:page', (req, res, next) => {
+  if (req.params.page.startsWith('api')) return next();
+  const filePath = findHtmlFile(`${req.params.page}.html`);
+  if (filePath) {
+    return res.sendFile(filePath);
+  }
+  next();
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
